@@ -1,12 +1,17 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/flowbite/**/*.js",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      "primary": "#A0C9C3",
+      "secondary": "#033859",
+    },
     extend: {},
   },
   plugins: [
-    require('flowbite/plugin')
+    // require('flowbite/plugin')
+    require('@tailwindcss/forms'),
   ],
 }
