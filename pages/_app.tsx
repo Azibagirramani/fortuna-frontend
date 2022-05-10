@@ -2,7 +2,8 @@ import type { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 
-import "../scss/vendors/tailwind.scss"
+import "../scss/layouts/dashboard.css";
+import "../scss/vendors/tailwind.scss";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode

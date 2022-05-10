@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
+import Link from "next/link";
 
 /// layout import
 import PublicLayout from "../layouts/public/index"
@@ -36,10 +37,11 @@ function Home (){
                 <BaseButton type="submit" loading={loader} onClick={updatedState}>
                   Register
                 </BaseButton>
+                
             </form>
           </div>
         </div>
-        <div className="md:flex-1 flex-2 lg:absolute lg:right-[22rem] -z-10">
+        <div className="md:flex-1 flex-2 -z-10">
           <Image 
             src={HeroImage}
           />
