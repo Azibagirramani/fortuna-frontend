@@ -2,7 +2,7 @@ import { MdDashboard, MdEmojiPeople, MdPayments, MdStackedLineChart } from "reac
 import { SideBarLinks } from "./types"
 
 
-
+/// route list 
 const sideBarLinks: SideBarLinks[] = [
     {
         label: "Dashboard",
@@ -17,12 +17,12 @@ const sideBarLinks: SideBarLinks[] = [
     },
     {
         label: "Finance Section",
-        to: "",
+        to: "#",
         icons: MdPayments
     },
     {
         label: "Reports",
-        to: "",
+        to: "#",
         icons: MdStackedLineChart
     }
 ]
