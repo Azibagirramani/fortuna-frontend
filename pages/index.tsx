@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -11,11 +10,6 @@ import BaseButton from "../components/forms/BaseButton";
 
 
 function Home (){
-  const [loader, setLoader] = useState<boolean>(false)
-  const updatedState = () => {
-    setLoader(!loader)
-  }
-
   return (
     <>  
     <Head>
@@ -29,14 +23,9 @@ function Home (){
           <h1 className="text-[1.8rem] md:text-[2rem] lg:text-[3.7rem] text-secondary font-extrabold leading-normal">Share your smile with <br/> the world and <br className="d-none" /> find a friend</h1>
           <p className="mt-[2rem] text-secondary">Thousands of new profiles delivered <br/> weekly to your inbox</p>
           <div className="flex flex-col mt-5">
-            <p className="text-secondary">Join beta team</p>
-            <form className="flex justify-center lg:justify-start md:justify-start gap-3 align-middle mt-3">
-                <input type="email" className="w-[fit-content] rounded" placeholder="Enter your email" required/>
-                <BaseButton type="submit" loading={loader} onClick={updatedState}>
-                  Register
-                </BaseButton>
-                
-            </form>
+            <BaseButton type="button">
+              <span className="font-capitalize font-extrabold">Join Beta Team</span>
+            </BaseButton>
           </div>
         </div>
         <div className="md:flex-1 flex-2 -z-10">

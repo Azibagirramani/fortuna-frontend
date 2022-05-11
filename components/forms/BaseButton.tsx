@@ -9,7 +9,7 @@ interface ButtonProps {
 
 function BaseButton ({ disabled, type, loading = false, onClick, children }: ButtonProps): JSX.Element{
     return (
-    <button disabled={disabled} type={type} onClick={onClick} className="font-capitalize py-2.5 px-5 mr-2 text-sm font-medium text-white bg-secondary rounded-lg border border-gray-200">
+    <button disabled={disabled} type={type} onClick={onClick} className="py-5 lg:w-fit md:w-fit px-5 mr-2 text-sm font-medium text-white bg-secondary rounded-lg border border-gray-200">
         {loading 
             ? 
             <span>
