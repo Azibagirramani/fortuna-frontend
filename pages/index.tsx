@@ -8,7 +8,6 @@ import PublicLayout from "../layouts/public/index"
 import HeroImage from "../public/images/Bikes.svg"
 import BaseButton from "../components/forms/BaseButton";
 
-
 function Home (){
   return (
     <>  
@@ -28,7 +27,7 @@ function Home (){
             </BaseButton>
           </div>
         </div>
-        <div className="md:flex-1 flex-2 -z-10">
+        <div className="md:flex-1 -z-10">
           <Image 
             src={HeroImage}
           />

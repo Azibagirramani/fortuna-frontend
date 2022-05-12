@@ -1,0 +1,36 @@
+
+
+.inputControl {
+    display: flex;
+    align-items: center;
+
+    .icon {
+        font-size: inherit;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    
+        &__label {
+            margin-bottom: 0.5rem;
+        }
+    
+        &__input {
+            outline: none !important;
+            height: 3rem;
+            border: 2px solid grey;
+
+        
+            &:active:focus {
+                outline: none !important;
+            }
+            &:focus {
+                outline: none !important;
+            }
+        }
+        
+    }
+
+}
+

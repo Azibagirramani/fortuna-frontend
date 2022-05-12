@@ -99,9 +99,9 @@ aside {
     font-weight: bold;
 }
 
-nav {
+/* nav {
     margin-top: 2rem;
-}
+} */
 
 aside nav li {
     cursor: pointer;
