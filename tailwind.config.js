@@ -7,11 +7,11 @@ module.exports = {
     colors: {
       "primary": "#A0C9C3",
       "secondary": "#033859",
+      "moony": "#c0c0c0"
     },
     extend: {},
   },
   plugins: [
-    // require('flowbite/plugin')
     require('@tailwindcss/forms'),
   ],
 }

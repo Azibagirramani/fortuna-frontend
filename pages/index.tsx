@@ -16,14 +16,13 @@ function Home (){
         Welcome to Fortuna
       </title>
     </Head>
-    <div className="container md:mx-auto lg:mx-auto lg:pt-[2rem] px-5 lg:px-[0.09rem] md:px-3">
-      <div className="flex justify-center lg:flex-row md:flex-row flex-col mt-8 gap-[1rem]">
-        <div className="flex-1 text-center lg:text-left md:text-left">
-          <h1 className="text-[1.8rem] md:text-[2rem] lg:text-[3.7rem] text-secondary font-extrabold leading-normal">Share your smile with <br/> the world and <br className="d-none" /> find a friend</h1>
-          <p className="mt-[2rem] text-secondary">Thousands of new profiles delivered <br/> weekly to your inbox</p>
+      <div className="flex justify-center lg:flex-row md:flex-row flex-col mt-10 gap-10 mx-5 lg:mx-[4rem] xl:mx-[10rem]">
+        <div className="flex-1 text-center mx-auto lg:text-left md:text-left">
+          <h1 className="text-[1.8rem] md:text-[2rem] lg:text-[2.5rem] xl:text-7xl xl:leading-normal text-black-100 font-extrabold leading-normal">Share your smile with <br/> the world and <br className="d-none" /> find a friend</h1>
+          <p className="mt-[2rem] text-black-100 xl:text-2xl xl:font-medium lg:font-medium font-extrabold">Thousands of new profiles delivered <br/> weekly to your inbox</p>
           <div className="flex flex-col mt-5">
             <BaseButton type="button">
-              <span className="font-capitalize font-extrabold">Join Beta Team</span>
+              <span className="font-capitalize font-extrabold text-[white]">Join Beta Team</span>
             </BaseButton>
           </div>
         </div>
@@ -33,8 +32,6 @@ function Home (){
           />
         </div>
       </div>
-    </div>
-
     </>
  
   )

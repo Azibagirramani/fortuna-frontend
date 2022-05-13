@@ -6,6 +6,11 @@ export interface NavBarLinks {
 }
 
 
+export interface FooterLinks {
+    title: string;
+    links?: NavBarLinks[]
+}
+
 export interface BaseInput<T> {
     placeholder?: string
     label?: string

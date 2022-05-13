@@ -1,18 +1,17 @@
-import { NextPage } from "next"
 import Link from "next/link"
 
 import { NavBarLinks } from "../types"
 
-function publicNavBar (props: { links: any }) {
+export default (props: { links: any }) => {
     const { links } = props
     const NavLinks: NavBarLinks[] = [ ...links ]
 
     return(
         <>
-            <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+            <nav className="bg-white border-gray-200 py-2.5 rounded dark:bg-gray-800 lg:mx-[4rem] mx-5">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <a href="#" className="flex items-center">
-                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white text-secondary">Fortuna</span>
+                        <span className="self-center text-2xl font-extrabold whitespace-nowrap dark:text-white text-black">Fortuna</span>
                     </a>
                     <button data-collapse-toggle="mobile-menu" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
                     <span className="sr-only">Open main menu</span>
@@ -23,9 +22,11 @@ function publicNavBar (props: { links: any }) {
                         <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                             {
                                 NavLinks.map((items, index)=> {
-                                    return <Link href={items.to} key={index}> 
-                                        <a className="block hover:text-slate-400 text-secondary capitalize py-2 pr-4 pl-3 text-dark md:bg-transparent" aria-current="page">{items.label}</a>
+                                    return <li className="mb-4 lg:mb-0 md:mb-0"  key={index}>
+                                            <Link href={items.to}> 
+                                        <a className="font-light text-black hover:text-moony" aria-current="page">{items.label}</a>
                                      </Link>
+                                    </li>
                                 })
                             }
                         </ul>
@@ -35,5 +36,3 @@ function publicNavBar (props: { links: any }) {
         </>
     )
 }
-
-export default publicNavBar
