@@ -1,8 +1,9 @@
 import { ReactNode, ChangeEventHandler, FocusEventHandler, ButtonHTMLAttributes } from "react";
-
+import { Url } from "url";
 export interface NavBarLinks {
     label: string,
-    to: any,
+    to: Url,
+    type?: string,
 }
 
 
@@ -35,5 +36,7 @@ export interface BaseButtonInterface {
     [key: string]: any
 }
 
-type Base = BaseButtonInterface & ButtonHTMLAttributes<T>
-
+export declare type BaseCardInterface = {
+    to?: Url,
+    children?: ReactNode
+}

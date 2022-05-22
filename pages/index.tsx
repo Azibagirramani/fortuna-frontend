@@ -8,12 +8,13 @@ import PublicLayout from "../layouts/public/index"
 import HeroImage from "../public/images/Bikes.svg"
 import BaseButton from "../components/forms/BaseButton";
 
+
 function Home (){
   return (
     <>  
     <Head>
       <title>
-        Welcome to Fortuna
+        Welcome to Fortuna 
       </title>
     </Head>
       <div className="flex justify-center lg:flex-row md:flex-row flex-col mt-10 gap-10 mx-5 lg:mx-[4rem] xl:mx-[10rem]">

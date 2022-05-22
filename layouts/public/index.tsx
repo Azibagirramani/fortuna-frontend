@@ -7,12 +7,18 @@ import PublicFooter from "../../components/public/BaseFooter";
 import { NavBarLinks } from "../../components/types"
 
 
-function PublicLayout(page: ReactElement){
+function PublicLayout(page: ReactElement) {
 
   const links: NavBarLinks[] = [
     {
       label: "Teams",
       to: ""
+    },
+
+    {
+      label: "Explore Needs",
+      to: "explore-needs",
+      type: "button"
     },
     // {
     //   label: "Contacts",
@@ -27,13 +33,13 @@ function PublicLayout(page: ReactElement){
     //   to:""
     // }
   ]
-    return(
-      <>
-        <PublicNavBar links={links} />
-          {page}
-        <PublicFooter />
-      </>
-    )
+  return (
+    <>
+      <PublicNavBar links={links} />
+      {page}
+      <PublicFooter />
+    </>
+  )
 }
 
 export default PublicLayout;

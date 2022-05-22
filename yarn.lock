@@ -355,6 +355,11 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
+"@highcharts/map-collection@^2.0.1":
+  "integrity" "sha512-eC5sEMC8LoCVMCz4BKuREcS3wVBBSFaRClJ7/vVZxd4nJe0VEykSFfQJwh8lpY4oJDy46iYrFzy3fwsTo9hmqg=="
+  "resolved" "https://registry.npmjs.org/@highcharts/map-collection/-/map-collection-2.0.1.tgz"
+  "version" "2.0.1"
+
 "@humanwhocodes/config-array@^0.9.2":
   "integrity" "sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.9.5.tgz"
@@ -2750,6 +2755,16 @@
   "version" "1.0.3"
   dependencies:
     "function-bind" "^1.1.1"
+
+"highcharts-react-official@^3.1.0":
+  "integrity" "sha512-CkWJHrVMOc6CT8KFu1dR+a0w5OxCVKKgZUNWtEi5TmR0xqBDIDe+RyM652MAN/jBYppxMo6TCUVlRObCyWAn0Q=="
+  "resolved" "https://registry.npmjs.org/highcharts-react-official/-/highcharts-react-official-3.1.0.tgz"
+  "version" "3.1.0"
+
+"highcharts@^10.1.0", "highcharts@>=6.0.0":
+  "integrity" "sha512-gW/pzy/Qy/hiYeCflYHpwgsP2nqQavwuRUswRf+papmbutZ3I7K7AIZJ/yZ9NL5yzpF7X7r2dX7/nzZGN4A1rg=="
+  "resolved" "https://registry.npmjs.org/highcharts/-/highcharts-10.1.0.tgz"
+  "version" "10.1.0"
 
 "hoist-non-react-statics@^3.3.0", "hoist-non-react-statics@^3.3.2":
   "integrity" "sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw=="

@@ -8,9 +8,9 @@ import axios, { AxiosRequestConfig, AxiosResponse, Method } from "axios"
 
 export class HttpClient implements HttpClientInterface {
 
-    public url: string;
+    public url: string | undefined;
 
-    constructor(private BaseUrl: string) {
+    constructor(private BaseUrl: string | undefined) {
         this.url = BaseUrl
     }
 
@@ -23,7 +23,7 @@ export class HttpClient implements HttpClientInterface {
         } catch (error) {
             throw error
         } finally {
-            console.info("http client finished")
+            console.info("http client finished url:", `${url}`)
         }
     };
 

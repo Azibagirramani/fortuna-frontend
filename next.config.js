@@ -4,6 +4,9 @@ const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
     includePath: [path.join(__dirname, 'scss')],
+  },
+  env: {
+    backendUrl: process.env.backendUrl,
   }
 }
 
