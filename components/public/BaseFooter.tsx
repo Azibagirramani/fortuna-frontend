@@ -48,7 +48,7 @@ export default () => {
     ] 
 
     return(
-            <footer className="flex flex-col gap-9 xl:flex-row md:flex-row lg:justify-between mt-14 mx-5 lg:mx-[4rem] xl:mx-[10rem] my-10">
+            <footer className="flex flex-col gap-9 xl:flex-row md:flex-row lg:justify-between mt-10 mx-5 lg:mx-[4rem] xl:mx-[10rem] my-10">
                 <div className="flex flex-col lg:justify-between">
                     <h1 className="text-2xl font-extrabold">Fortuna</h1> 
                     <div>

@@ -14,18 +14,18 @@ function PublicLayout(page: ReactElement){
       label: "Teams",
       to: ""
     },
-    {
-      label: "Contacts",
-      to: ""
-    },
-    {
-      label: "Issues",
-      to:""
-    },
-    {
-      label: "Beta - login",
-      to:""
-    }
+    // {
+    //   label: "Contacts",
+    //   to: ""
+    // },
+    // {
+    //   label: "Issues",
+    //   to:""
+    // },
+    // {
+    //   label: "Beta - login",
+    //   to:""
+    // }
   ]
     return(
       <>

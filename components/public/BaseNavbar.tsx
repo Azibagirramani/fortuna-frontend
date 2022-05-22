@@ -1,4 +1,5 @@
 import Link from "next/link"
+import BaseButton from "../forms/BaseButton"
 
 import { NavBarLinks } from "../types"
 
@@ -25,11 +26,14 @@ export default (props: { links: any }) => {
                                     return <li className="mb-4 lg:mb-0 md:mb-0"  key={index}>
                                             <Link href={items.to}> 
                                         <a className="font-light text-black hover:text-moony" aria-current="page">{items.label}</a>
+                                        
                                      </Link>
+                                     
                                     </li>
                                 })
                             }
                         </ul>
+                        
                     </div>
                 </div>
             </nav>

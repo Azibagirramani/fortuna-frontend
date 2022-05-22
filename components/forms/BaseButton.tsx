@@ -1,15 +1,10 @@
-interface ButtonProps {
-    disabled?: boolean,
-    type: any,
-    loading?: boolean,
-    [key:string]: any
-}
+import { FC } from "react";
 
+import { BaseButtonInterface } from "../types"
 
-
-function BaseButton ({ disabled, type, loading = false, onClick, children }: ButtonProps): JSX.Element{
+const BaseButton: FC<BaseButtonInterface> = ({ disabled, type, loading = false, onClick, children }) => {
     return (
-    <button disabled={disabled} type={type} onClick={onClick} className="py-5 lg:w-fit md:w-fit px-5 mr-2 text-sm font-medium text-white bg-secondary rounded-lg">
+    <button disabled={disabled}  type={type} onClick={onClick} className="py-5 xl:w-fit lg:w-full md:w-fit px-5 mr-2 text-sm font-medium text-white bg-secondary rounded shadow drop-shadow-sm">
         {loading 
             ? 
             <span>
