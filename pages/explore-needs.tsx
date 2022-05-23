@@ -8,7 +8,7 @@
 // component import
 import BaseCard from "../components/BaseCards";
 import BaseMaps from "../components/charts/maps";
-import BaseFilter from "../components/BaseFilter";
+import BaseFilter from "../components/filter/BaseFilter";
 
 function Needs() {
 
@@ -28,7 +28,6 @@ function Needs() {
                 <div className="mt-10">
                     <BaseMaps />
                 </div>
-
             </div>
             <div className="flex-auto w-20 overflow-y-auto border border-primary">
                 {NeedCard}

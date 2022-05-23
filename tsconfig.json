@@ -22,7 +22,13 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "jest.config.js",
+    "components/forms/__test__/BaseButton.test.tsx",
+    "jest.setup.js",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "next.config.js"
   ],
   "exclude": [
     "node_modules"

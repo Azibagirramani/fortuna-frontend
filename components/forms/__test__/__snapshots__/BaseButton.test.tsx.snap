@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseButton should render correctly 1`] = `
+<div>
+  <button
+    class="py-5 xl:w-fit lg:w-full md:w-fit px-5 mr-2 text-sm font-medium text-white bg-secondary rounded shadow drop-shadow-sm undefined"
+  />
+</div>
+`;
