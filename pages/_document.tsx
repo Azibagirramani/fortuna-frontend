@@ -5,8 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css" />
-        <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-
+        {/* <script src="https://code.highcharts.com/maps/modules/exporting.js"></script> */}
       </Head>
       <body>
         <Main />

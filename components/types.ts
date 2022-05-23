@@ -48,5 +48,7 @@ type selectData = {
 
 export declare type BaseSelectProps = {
     data: selectData[],
-    onChange: ChangeEventHandler,
+    id?: string,
+    label?: string,
+    onChange?: ChangeEventHandler,
 }

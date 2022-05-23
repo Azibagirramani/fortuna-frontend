@@ -29,7 +29,7 @@ function Needs() {
                     <BaseMaps />
                 </div>
             </div>
-            <div className="flex-auto w-20 overflow-y-auto border border-primary">
+            <div className="flex-auto w-20 overflow-y-auto">
                 {NeedCard}
             </div>
         </div >
