@@ -2,12 +2,11 @@ import { FC } from "react";
 
 import { BaseSelectProps } from "../types";
 
-const BaseSelect: FC<BaseSelectProps> = ({ label, data, id = "base", onChange }) => {
+const BaseSelect: FC<BaseSelectProps> = ({ label, data = [{ label: "item", value: "item-value" }], id = "base", onChange }) => {
 
     const selectId: string = `${id}-select`;
-
     return (
-        <div className="flex items-center gap-2">
+        <div className="">
             {label ? <label htmlFor={selectId} className="block text-gray-700 text-sm font-bold mb-2">
                 {label}
             </label> : null}

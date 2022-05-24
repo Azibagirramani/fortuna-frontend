@@ -41,13 +41,13 @@ export declare type BaseCardInterface = {
 }
 
 
-type selectData = {
+export type selectData = {
     label: string,
     value?: string | number
 }
 
 export declare type BaseSelectProps = {
-    data: selectData[],
+    data?: selectData[],
     id?: string,
     label?: string,
     onChange?: ChangeEventHandler,

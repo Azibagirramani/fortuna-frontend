@@ -23,7 +23,7 @@ function Needs() {
 
     return (
         <div className="flex h-screen">
-            <div className="flex-auto w-80">
+            <div className="flex-auto w-80 mx-4">
                 <BaseFilter />
                 <div className="mt-10">
                     <BaseMaps />
