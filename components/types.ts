@@ -50,5 +50,6 @@ export declare type BaseSelectProps = {
     data?: selectData[],
     id?: string,
     label?: string,
-    onChange?: ChangeEventHandler,
+    value?: string | number,
+    handleChange?: ChangeEventHandler<HTMLSelectElement>,
 }
