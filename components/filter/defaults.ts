@@ -6,14 +6,11 @@
 import NgStates from "./ng.states.json";
 
 
-const locations = {
-    "nigeria": {
-        name: "Nigeria",
-        lat: 9.0819999999999997,
-        lng: 8.6753999999999993,
-        zoom: 4,
-        states: NgStates
+export const locations: any = [
+    {
+        "nigeria": {
+            states: NgStates,
+        }
     }
-}
+]
 
-export { locations }

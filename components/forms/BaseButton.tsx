@@ -4,7 +4,7 @@ import { BaseButtonInterface } from "../types"
 
 const BaseButton: FC<BaseButtonInterface> = ({ disabled, id, type, loading = false, onClick, children, exClass }): JSX.Element => {
     return (
-        <button disabled={disabled} type={type} id={id} onClick={onClick} className={`py-5 xl:w-fit lg:w-full md:w-fit px-5 mr-2 text-sm font-medium text-white bg-secondary rounded shadow drop-shadow-sm ${exClass}`}>
+        <button disabled={disabled} type={type} id={id} onClick={onClick} className={`xl:w-fit lg:w-full md:w-fit text-sm font-medium text-white shadow drop-shadow-sm ${exClass}`}>
             {loading
                 ?
                 <span id="spinner">

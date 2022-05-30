@@ -11,34 +11,21 @@ function PublicLayout(page: ReactElement) {
 
   const links: NavBarLinks[] = [
     {
-      label: "Teams",
-      to: ""
+      label: "Help",
+      to: "''",
     },
 
     {
-      label: "Explore Needs",
-      to: "explore-needs",
-      type: "button"
+      label: "Contact",
+      to: "''",
     },
-    // {
-    //   label: "Contacts",
-    //   to: ""
-    // },
-    // {
-    //   label: "Issues",
-    //   to:""
-    // },
-    // {
-    //   label: "Beta - login",
-    //   to:""
-    // }
   ]
   return (
-    <>
+    <div className="h-screen">
       <PublicNavBar links={links} />
       {page}
       <PublicFooter />
-    </>
+    </div>
   )
 }
 

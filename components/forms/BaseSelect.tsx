@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { BaseSelectProps } from "../types";
 
-const BaseSelect: FC<BaseSelectProps> = ({ label, value, name, data = [{ label: "item", value: "item-value" }, { label: "item2", value: "item-value2" }], id = "base", handleChange }) => {
+const BaseSelect: FC<BaseSelectProps> = ({ label, value, name, data = [], id = "base", handleChange }) => {
 
     const selectId: string = `${id}-select`;
 
