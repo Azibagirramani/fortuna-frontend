@@ -3,9 +3,8 @@ import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 
-import "antd/dist/antd.css";
 import "../scss/layouts/dashboard.css";
-import "../scss/vendors/tailwind.scss";
+import "../scss/vendors/tailwind.css";
 
 import { store } from "../store/store"
 type NextPageWithLayout = NextPage & {
