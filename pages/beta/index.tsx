@@ -37,6 +37,7 @@ function Landing() {
                             className="shadow rounded-full"
                             height={400}
                             width={400}
+                            alt="heroImage"
                         />
                     </div>
                 </div>

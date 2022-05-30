@@ -1,4 +1,6 @@
-export default () => {
+import React from "react";
+
+const BaseFooter = () => {
 
     return (
         <footer className="flex justify-center mt-5 md:mt-0 lg:mt-0 xl:mt-5">
@@ -21,3 +23,5 @@ export default () => {
         </footer>
     )
 }
+
+export default BaseFooter;

@@ -55,7 +55,7 @@ function BaseFilter() {
 
     useEffect(() => {
         updateFilterValues();
-    }, [filterObject]);
+    });
 
 
 

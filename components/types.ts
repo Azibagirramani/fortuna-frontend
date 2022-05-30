@@ -2,7 +2,7 @@ import React, { ReactNode, ChangeEventHandler, FocusEventHandler, ButtonHTMLAttr
 import { Url } from "url";
 export interface NavBarLinks {
     label: string,
-    to: Url,
+    to: string,
     type?: string,
 }
 export interface FooterLinks {

@@ -12,12 +12,12 @@ function PublicLayout(page: ReactElement) {
   const links: NavBarLinks[] = [
     {
       label: "Help",
-      to: "''",
+      to: "#",
     },
 
     {
       label: "Contact",
-      to: "''",
+      to: "#",
     },
   ]
   return (

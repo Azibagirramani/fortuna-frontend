@@ -8,7 +8,7 @@ import { NavBarLinks } from "../types"
 // logo
 import Logo from "../../public/images/logo.png"
 
-export default (props: { links: any }) => {
+const BaseNavBar = (props: { links: any }) => {
     const { links } = props
     const NavLinks: NavBarLinks[] = [...links]
 
@@ -44,3 +44,5 @@ export default (props: { links: any }) => {
         </>
     )
 }
+
+export default BaseNavBar;
