@@ -1,4 +1,4 @@
-import filterReducer from "./slice"
+import filterReducer from "./slice";
 
-export { filterReducer }
-export * from "./types"
+export { filterReducer };
+export * from "./types.d";

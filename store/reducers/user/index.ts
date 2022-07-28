@@ -1,4 +1,4 @@
-import userReducer from "./slice"
+import userReducer from "./slice";
 
-export { userReducer }
-export * from "./types"
+export { userReducer };
+export * from "./types.d";
