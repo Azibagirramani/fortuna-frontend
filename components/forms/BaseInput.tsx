@@ -1,17 +1,45 @@
-import BaseInputModule from "../../scss/components/BaseInput.module.scss"
+import { FC } from "react";
 
-import { BaseInput as BaseInputProp } from "../types"
+import type { BaseInput as BaseInputProp } from "@/components/types";
 
-import { BaseAlert } from "../notifications/BaseAlert";
+// * Base input component
+const BaseInput: FC<BaseInputProp> = ({
+  label = "",
+  error = "",
+  exClass = "",
+  component, // ? we need to remove this "component" to avoid errors.
+  ...rest
+}): JSX.Element => {
+  const setRef: string = `${label ? rest.name + "-input" : "default-input"}`;
+  return (
+    <>
+      {label && (
+        <label
+          htmlFor={setRef}
+          className={`block mb-2 ${
+            error ? "text-red-700" : ""
+          } text-sm font-medium`}
+        >
+          {label}
+        </label>
+      )}
+      <input
+        {...rest}
+        id={setRef}
+        className={`bg-red-50 py-4 border ${exClass ? exClass : null} ${
+          error
+            ? "border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500"
+            : ""
+        }   text-sm rounded bg-white dark:bg-gray-700  block w-full p-2.5`}
+      />
 
-const BaseInput = ({ placeholder = "default", label, type, name, onChange, value, onBlur, error }: BaseInputProp) => (
-    <div className={BaseInputModule.inputControl}>
-        <div className={BaseInputModule.container}>
-            {label ? <label htmlFor={`${name}-field`} className={BaseInputModule.container__label}>{label}</label> : null}
-            <input type={type} value={value} onChange={onChange} onBlur={onBlur} className={BaseInputModule.container__input} id={`${name}-field`} placeholder={placeholder} name={`${name}`} />
-        </div>
-        {error ? <BaseAlert> {error} </BaseAlert> : null}
-    </div>
-);
+      {error ? (
+        <p className="mt-2 text-sm text-[red] dark:text-[red]-500">
+          <span className="font-medium">{error}</span>
+        </p>
+      ) : null}
+    </>
+  );
+};
 
-export default BaseInput
+export default BaseInput;

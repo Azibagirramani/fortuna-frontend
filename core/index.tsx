@@ -1,10 +1,9 @@
-import { HttpClient } from "./http";
+import AuthService from "./services/auth.s";
+import Axios from "axios";
+import Routes from "./routes";
 
 // loading env variables
-const backendUrl = process.env.BACKEND_ENDPOINT
+const backendUrl = "http://localhost:9000/api/v1/";
+const Auth = new AuthService(Routes, Axios, backendUrl);
 
-const http = new HttpClient(backendUrl);
-
-export {
-    http
-}
+export { Auth };

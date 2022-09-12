@@ -1,9 +1,9 @@
 import { FC } from "react";
 // import Link from "next/link";
 
-import { BaseCardInterface } from "./types";
+import { BaseCardInterface } from "@/components/types";
 
-const BaseCard: FC<BaseCardInterface> = ({ to = "#" }) => {
+const BaseCard: FC<BaseCardInterface> = () => {
   return (
     <div className="shadow-sm hover:cursor-pointer hover:shadow-md p-5">
       <p>

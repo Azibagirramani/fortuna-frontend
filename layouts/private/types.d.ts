@@ -1,5 +1,5 @@
 export type SideBarLinks = {
-  label: string;
+  label?: string;
   to: any;
   hasBadge?: boolean;
   icons?: any;

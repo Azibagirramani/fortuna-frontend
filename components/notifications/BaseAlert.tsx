@@ -1,18 +1,39 @@
-import React, { FC } from "react";
-import { BaseAlertInterface } from "../types";
+import { toast, ToastOptions } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+const Alert = ({
+  type = "",
+  message = "Demo alert",
+  autoClose = 5000,
+  position = "top-center",
+}) => {
+  const options = {
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    autoClose,
+    position,
+  } as ToastOptions;
+  switch (type) {
+    case "success":
+      toast.success(message, options);
+      break;
+    case "error":
+      toast.error(message, options);
+      break;
+    case "warning":
+      toast.warn(message, options);
+      break;
+    case "info":
+      toast.info(message, options);
+      break;
+    default:
+      toast(message, options);
+  }
 
+  return;
+};
 
-export const BaseAlert: FC<BaseAlertInterface> = ({ type, children }) => {
-
-    console.log(type)
-
-    let extendClass: string | undefined = "text-red-700 bg-red-100"
-    if(type !== undefined && type !== ""){
-        extendClass = type
-    }
-
-    return     <div className={`p-2 mb-4 text-sm w-fit rounded-lg ${extendClass}`} role="alert">
-        {children}
-</div>
-}
+export default Alert;

@@ -1,4 +1,5 @@
-import React, { ReactNode, ChangeEventHandler, FocusEventHandler } from "react";
+import { ReactNode, ChangeEventHandler, FocusEventHandler } from "react";
+import { IconType } from "react-icons";
 import { Url } from "url";
 export type NavBarLinks = {
   label: string;
@@ -21,10 +22,12 @@ export type BaseInput = {
   type: string;
   name: string;
   preIcon?: any; // i will update this type soon
-  value?: string | ReadonlyArray<string> | number | undefined;
+  value?: string | ReadonlyArray<string> | number;
   onChange?: ChangeEventHandler | undefined;
   onBlur: FocusEventHandler;
   error?: string;
+  disabled?: boolean;
+  [key: string]: any;
 };
 
 export interface BaseButtonInterface {
@@ -49,5 +52,17 @@ export declare type BaseSelectProps = {
   label?: string;
   value?: string | number;
   name: string;
-  handleChange?: ChangeEventHandler<HTMLSelectElement> | undefined;
+  onChange?: ChangeEventHandler<HTMLSelectElement> | undefined;
 };
+
+export type AccountCardI = {
+  icon?: any;
+  label: string;
+  [key: string]: any;
+};
+
+export interface FeatureProps {
+  Icon: IconType;
+  title: string;
+  description: string;
+}
