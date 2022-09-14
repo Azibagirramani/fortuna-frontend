@@ -65,7 +65,11 @@ export type INeeds = {
   tags: string[];
   expires: Date;
   active: boolean;
-  for: string;
+  purpose: string;
   category: string;
-  accountId?: number;
+  accountId: number;
+  createdAt: Date;
+  updatedAt: Date;
+  country: string;
+  city: string;
 };

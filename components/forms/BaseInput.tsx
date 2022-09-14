@@ -26,11 +26,11 @@ const BaseInput: FC<BaseInputProp> = ({
       <input
         {...rest}
         id={setRef}
-        className={`bg-red-50 py-4 border ${exClass ? exClass : null} ${
+        className={`bg-red-50 border rounded-full ${exClass ? exClass : null} ${
           error
             ? "border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500"
             : ""
-        }   text-sm rounded bg-white dark:bg-gray-700  block w-full p-2.5`}
+        }  border-[#bcc1c7] h-fit text-sm rounded bg-white dark:bg-gray-700  block w-full`}
       />
 
       {error ? (

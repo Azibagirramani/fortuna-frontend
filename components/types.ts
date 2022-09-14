@@ -24,7 +24,7 @@ export type BaseInput = {
   preIcon?: any; // i will update this type soon
   value?: string | ReadonlyArray<string> | number;
   onChange?: ChangeEventHandler | undefined;
-  onBlur: FocusEventHandler;
+  onBlur?: FocusEventHandler;
   error?: string;
   disabled?: boolean;
   [key: string]: any;

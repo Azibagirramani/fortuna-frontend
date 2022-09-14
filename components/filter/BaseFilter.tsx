@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-// import BaseButton from "../forms/BaseButton";
 import BaseSelect from "@/components/forms/BaseSelect";
 
 import { locations } from "@/components/filter/defaults";
 
 import { FilterProps } from "@/components/filter/types";
+import BaseInput from "../forms/BaseInput";
 
 function BaseFilter() {
   let stateData: any = [];
 
   const [filterObject, setFilterObject] = useState<FilterProps>({
-    country: "nigeria",
+    country: "Country",
     state: "",
     category: "",
   });
@@ -55,32 +55,35 @@ function BaseFilter() {
   });
 
   return (
-    <div className="flex items-center justify-between shadow-md p-3 mt-4 rounded">
-      <h5 className="text-3xl font-extrabold">Fortuna</h5>
-      <div className="flex items-center gap-4">
-        <div className="flex gap-4 p-1">
+    <div className="flex items-center justify-between gap-4 bg-white px-7 py-1">
+      <div>
+        <BaseInput
+          type="search"
+          name="search"
+          value={filterObject.category}
+          onChange={handleChange}
+          placeholder="Search..."
+        />
+      </div>
+      <div>
+        <div className="flex gap-4">
           <BaseSelect
-            label="Country"
             id="country"
             name="country"
             data={[
+              { label: "Country", value: "" },
               { label: "Nigeria", value: "nigeria" },
-              { label: "Kenya", value: "kenya" },
             ]}
             value={filterObject.country}
             // handleChange={handleChange}
           />
           <BaseSelect
-            label="State"
             id="state"
             name="state"
             data={stateData}
             value={filterObject.state}
             // handleChange={handleChange}
           />
-        </div>
-        <div>
-          <BaseSelect id="category" label="Needs Category" name="category" />
         </div>
       </div>
     </div>

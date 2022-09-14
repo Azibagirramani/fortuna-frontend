@@ -2,7 +2,6 @@ import type { ReactElement } from "react";
 import { useStore } from "@/store/index";
 
 import PublicNavBar from "@/components/public/BaseNavbar";
-import PublicFooter from "@/components/public/BaseFooter";
 
 import { NavBarLinks } from "@/components/types";
 
@@ -23,7 +22,6 @@ function PublicLayout(page: ReactElement) {
     <div className="h-screen">
       <PublicNavBar links={links} />
       <div>{page}</div>
-      <PublicFooter />
     </div>
   );
 }

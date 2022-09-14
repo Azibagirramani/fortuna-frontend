@@ -19,7 +19,7 @@ const BaseSelect: FC<BaseSelectProps> = ({
         </label>
       ) : null}
       <select
-        className="active:border-none w-full py-3.5 rounded"
+        className="active:border-none w-fit border rounded-full border-[#bcc1c7] focus:border-[#bcc1c7]"
         id={selectId}
         {...rest}
       >
