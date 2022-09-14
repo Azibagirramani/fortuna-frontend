@@ -6,16 +6,16 @@ import PublicLayout from "@/layouts/public";
 import ExploreCard from "@/components/ExploreCard";
 import BaseFilter from "@/components/filter/BaseFilter";
 
-import { Axois } from "@/utilities/axios";
+import { Axois } from "../../proxies/Axios";
 
 import { INeeds } from "@/core/types";
 
-const DynamicSkeleton = dynamic(() => import("@/components/skeleton/expore"), {
+const DynamicSkeleton = dynamic(() => import("@/components/skeleton/explore"), {
   ssr: false,
 });
 
 function Explore() {
-  const [loader, setLoader] = useState<Boolean>(true);
+  const [IsLoading, setLoader] = useState(false);
   const [needs, setNeeds] = useState<INeeds[]>([]);
 
   // get needs
@@ -24,7 +24,7 @@ function Explore() {
     try {
       const data = await Axois.get("needs/explore");
       setNeeds(data.data.data);
-      console.log(data.data.data);
+      console.log(data.data.data, "Explore");
     } catch (error) {
       console.log(error);
     } finally {
@@ -33,38 +33,23 @@ function Explore() {
   };
 
   useEffect(() => {
-    // fetchNode();
+    fetchNode();
   }, []);
-
   return (
     <div className="flex h-screen md:pt-20 lg:pt-14 xl:pt-16">
       <div className="w-1/2 overflow-auto bg-[#f3f6f8] relative">
         <div className="fixed bg-white z-10 w-1/2 mt-3 py-2">
-          <BaseFilter />
+          {/* <BaseFilter /> */}
         </div>
 
         <div className="mt-24">
-          {loader ? (
-            <DynamicSkeleton />
-          ) : (
-            <div className="mx-5">
-              {needs.length <= 0 ? (
-                "No data"
-              ) : (
-                <div className="mt-5 my-10">
-                  {needs.map((items, index) => {
-                    return (
-                      <Fragment key={index}>
-                        <div className="mt-5">
-                          <ExploreCard {...items} />
-                        </div>
-                      </Fragment>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          )}
+          <div className="mt-5 my-10 mx-8">
+            {IsLoading && <DynamicSkeleton />}
+            {needs.length <= 0 && "No data"}
+            {needs.map((items, index) => {
+              return <ExploreCard {...items} key={index} />;
+            })}
+          </div>
         </div>
       </div>
       <div className="w-1/2 bg-gray-500"></div>

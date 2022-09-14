@@ -11,20 +11,18 @@ class AuthService {
 
   http: any;
   routes: Routes;
-  endpoint: string;
   constructor(
     _routes: Routes,
     _http: any,
-    _endpoint: string,
+    _endpoint?: string,
     _config?: object
   ) {
     this.routes = _routes;
     this.http = _http;
-    this.endpoint = _endpoint;
   }
 
-  login(payload: ILogin): Promise<AxiosResponse> {
-    const url = `${this.endpoint}${this.routes.login}`;
+  public login(payload: ILogin): Promise<AxiosResponse> {
+    const url = this.routes.login;
     return this.http.post(url, payload);
   }
 }

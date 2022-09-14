@@ -27,7 +27,7 @@
       "@/public/*": ["public/*"],
       "@/store/*": ["store/*"],
       "@/utilities/*": ["utilities/*"],
-      
+      "@/proxies/*":["proxies/*"]
     }
   },
   "include": [

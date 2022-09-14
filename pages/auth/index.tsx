@@ -1,10 +1,10 @@
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import { MdDashboard } from "react-icons/md";
 
-// custom hook
+// custom store hook
 import { useStore } from "@/store/index";
 
 // component imports
@@ -19,25 +19,22 @@ import { LoginValidation } from "@/utilities/validations/validationSchemas";
 
 import { Auth } from "@/core/index";
 
-import type { ILogin, HttpResponse } from "@/core/types";
-import type { FeatureProps } from "@/components/types";
-
 const Login = () => {
   const router = useRouter();
-  const [loader, setLoader] = useState<boolean>(false);
+  const [IsLoading, setLoading] = useState(false);
   const { dispatch } = useStore();
 
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
-    } as ILogin,
+    },
     validationSchema: LoginValidation,
     async onSubmit(values) {
-      setLoader(true);
+      setLoading(true);
 
       try {
-        const data = (await Auth.login(values)).data as HttpResponse;
+        const data = await Auth.login(values);
         dispatch({ type: "SET_USER", payload: data });
         BaseAlert({
           type: "success",
@@ -52,12 +49,12 @@ const Login = () => {
 
         console.log(error);
       } finally {
-        setLoader(false);
+        setLoading(false);
       }
     },
   });
 
-  const loginFormOptions = [
+  const loginFormConfig = [
     {
       component: BaseInput,
       name: "email",
@@ -78,7 +75,7 @@ const Login = () => {
     },
   ];
 
-  const featureList: FeatureProps[] = [
+  const featuresListing = [
     {
       Icon: MdDashboard,
       title: "Manage and monitor",
@@ -117,28 +114,26 @@ const Login = () => {
             onSubmit={formik.handleSubmit}
             autoComplete="false"
           >
-            {loginFormOptions
-              .map((option, index) => {
-                return (
-                  <div className="mb-5" key={index}>
-                    <option.component
-                      {...option}
-                      disabled={loader}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                    />
-                  </div>
-                );
-              })
-              .filter((option) => option)}
+            {loginFormConfig.map((option, index) => {
+              return (
+                <div className="mb-5" key={index}>
+                  <option.component
+                    {...option}
+                    disabled={IsLoading}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
+                </div>
+              );
+            })}
             <div className="flex justify-between items-center mt-5">
               <BaseCheckBox />
             </div>
 
             <div className="w-full mt-5">
               <BaseButton
-                loading={loader}
-                disabled={loader}
+                loading={IsLoading}
+                disabled={IsLoading}
                 type="submit"
                 exClass="bg-primary text-[white] md:w-full"
               >
@@ -161,12 +156,8 @@ const Login = () => {
 
           <div className="mt-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {featureList.map((items, index) => {
-                return (
-                  <Fragment key={index}>
-                    <Feature {...items} />
-                  </Fragment>
-                );
+              {featuresListing.map((items) => {
+                return <Feature {...items} key={items.title} />;
               })}
             </div>
           </div>
