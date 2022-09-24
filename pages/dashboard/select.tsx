@@ -2,11 +2,9 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { BsPerson, BsPeople } from "react-icons/bs";
 
-import { useStore } from "@/store/index";
-
 import BaseButton from "@/components/forms/BaseButton";
 
-import SetLayout from "@/layouts/private/PrivateSetUp";
+import PrivateLayout from "@/layouts/private/PrivateDashboardLayout";
 import AccountCard from "@/components/AccountCard";
 
 import { post } from "@/core/firebase/methods/storage";
@@ -17,7 +15,6 @@ import type { IAccount } from "@/core/types";
 const AccountType = () => {
   const [selectedAccount, setAccount] = useState<string>("");
   const [terms, setTerms] = useState<boolean>(true);
-  const { store } = useStore();
   const router = useRouter();
 
   const selectedAccountType = (accountType: IAccount) => {
@@ -40,11 +37,11 @@ const AccountType = () => {
       accountType: selectedAccount,
       terms: !terms,
     };
-    const currentUser = store.userObj.uid;
+    const currentUser = "store.userObj.uid";
     await post(`accounts/${currentUser}`, data);
 
     // redirect to next page
-    router.push("/beta/setup/account");
+    // router.push("/beta/setup/account");
   };
 
   const accountTypes = [
@@ -60,7 +57,7 @@ const AccountType = () => {
     },
   ] as AccountCardI[];
   return (
-    <div className="mx-5 md:mx-12">
+    <div>
       <p className="">Select account type</p>
       <div className="flex flex-col md:flex-row gap-5 mt-5 justify-center">
         {accountTypes.map((account, index) => {
@@ -116,5 +113,5 @@ const AccountType = () => {
   );
 };
 
-AccountType.getLayout = SetLayout;
+AccountType.getLayout = PrivateLayout;
 export default AccountType;

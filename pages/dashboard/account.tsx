@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { useFormik } from "formik";
 import BaseAlert from "@/components/notifications/BaseAlert";
 
-import SetLayout from "@/layouts/private/PrivateSetUp";
+import PrivateLayout from "@/layouts/private/PrivateDashboardLayout";
 
 import BaseInput from "@/components/forms/BaseInput";
 import BaseButton from "@/components/forms/BaseButton";
@@ -137,7 +137,7 @@ const Account = () => {
   return (
     <div>
       <form
-        className="mt-8 mx-5 md:mx-12 flex flex-col gap-5"
+        className="flex flex-col gap-5"
         onSubmit={formik.handleSubmit}
         autoComplete="false"
       >
@@ -183,5 +183,5 @@ const Account = () => {
   );
 };
 
-Account.getLayout = SetLayout;
+Account.getLayout = PrivateLayout;
 export default Account;

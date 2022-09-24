@@ -26,7 +26,7 @@ const BaseInput: FC<BaseInputProp> = ({
       <input
         {...rest}
         id={setRef}
-        className={`bg-red-50 border rounded-full ${exClass ? exClass : null} ${
+        className={`bg-red-50 border ${exClass ? exClass : null} ${
           error
             ? "border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500"
             : ""

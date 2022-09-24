@@ -1,10 +1,9 @@
 import dynamic from "next/dynamic";
-import { Fragment, Key, useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 
-import PublicLayout from "@/layouts/public";
+import PrivateLayout from "@/layouts/private/PrivateDashboardLayout";
 import ExploreCard from "@/components/ExploreCard";
-import BaseFilter from "@/components/filter/BaseFilter";
 
 import { Axois } from "../../proxies/Axios";
 
@@ -57,5 +56,5 @@ function Explore() {
   );
 }
 
-Explore.getLayout = PublicLayout;
+Explore.getLayout = PrivateLayout;
 export default Explore;

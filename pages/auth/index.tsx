@@ -1,11 +1,8 @@
 import { useFormik } from "formik";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { MdDashboard } from "react-icons/md";
-
-// custom store hook
-import { useStore } from "@/store/index";
 
 // component imports
 import BaseInput from "@/components/forms/BaseInput";
@@ -15,45 +12,45 @@ import BaseCheckBox from "@/components/forms/BaseCheckBox";
 import PublicLayout from "@/layouts/public/index";
 import Feature from "@/components/Features";
 
-import { LoginValidation } from "@/utilities/validations/validationSchemas";
+import { setUser } from "@/store/slice/user";
+import { useAppDispatch } from "@/store/hooks";
 
-import { Auth } from "@/core/index";
+// methods
+import { LoginValidation } from "@/utilities/validations/validationSchemas";
+import * as Auth from "./http";
+interface ILogin {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
-  const router = useRouter();
   const [IsLoading, setLoading] = useState(false);
-  const { dispatch } = useStore();
-
+  const dispatch = useAppDispatch();
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
-    },
+    } as ILogin,
     validationSchema: LoginValidation,
     async onSubmit(values) {
       setLoading(true);
-
-      try {
-        const data = await Auth.login(values);
-        dispatch({ type: "SET_USER", payload: data });
-        BaseAlert({
-          type: "success",
-          message: "Login Successful",
-        });
-        router.push("beta/dashboard");
-      } catch (error) {
+      const { errorMg, message, content } = await Auth.SubmitForm(values);
+      if (errorMg) {
         BaseAlert({
           type: "error",
-          message: "Email or Password is incorrect",
+          message: errorMg as string,
         });
 
-        console.log(error);
-      } finally {
         setLoading(false);
+        return;
       }
+
+      dispatch(setUser(content));
+      router.push("/dashboard");
+      setLoading(false);
     },
   });
-
   const loginFormConfig = [
     {
       component: BaseInput,

@@ -1,9 +1,9 @@
 import { Routes } from "./types";
 const routes: Routes = {
-  login: "accounts/login",
-  register: "accounts/register",
-  logout: "accounts/logout",
-  verify: "accounts/verify",
+  login: "auth/login",
+  register: "auth/register",
+  logout: "auth/logout",
+  verify: "auth/verify",
   forgotPassword: "accounts/forgot-password",
   resetPassword: "accounts/reset-password",
   updatePassword: "accounts/update-password",

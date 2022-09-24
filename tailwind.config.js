@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: "#95e1d3",
+      primary: "#0F5CFA",
       secondary: "#bdece3",
       subPrimary: "#6dd6c2",
       subSecondary: "#2a2a2a",
@@ -18,7 +18,11 @@ module.exports = {
       "background-gray": "#FBFEFF",
       "sb-gray": "#FBFBFB",
     },
-    extend: {},
+    extend: {
+      spacing: {
+        100: "32rem",
+      },
+    },
   },
   plugins: [require("flowbite/plugin"), require("@tailwindcss/forms")],
 };

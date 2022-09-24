@@ -1,40 +1,54 @@
-import { BsPersonBadge } from "react-icons/bs";
+import { VscMail } from "react-icons/vsc";
+import { IoIosNotificationsOutline } from "react-icons/io";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/index";
+
 export default function TopNavBar() {
-    return (
-      <nav className="flex justify-between items-center px-5 py-2">
-        <form>
-          <div className="relative">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-gray-500 dark:text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
-            </div>
-            <input
-              type="search"
-              id="search"
-              className="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-transparent"
-              placeholder="Search..."
-              required
-            />
-          </div>
-        </form>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <div>
-            <BsPersonBadge width={100} height={100} className="cursor-pointer" />
-          </div>
+  const user = useSelector((state: RootState) => state).user;
+
+  const date = new Date();
+  const dateTime =
+    `${date.getFullYear()} - ${date.getMonth()} - ${date.getDay()}` as string;
+  return (
+    <div className="flex justify-between items-center">
+      <div className="flex flex-col gap-1">
+        <h1 className="text-black font-bold">Dashboard</h1>
+        <div className="text-sm">
+          Monday <span className="text-gray-400">{dateTime}</span>
         </div>
-      </nav>
-    );
-  }
+      </div>
+      <div className="flex items-center gap-8" style={{ marginRight: "4rem" }}>
+        <VscMail className="h-6 w-6" />
+        <IoIosNotificationsOutline className="h-6 w-6" />
+
+        <div className="flex gap-5">
+          <div className="bg-blue-primary rounded-lg p-3 px-4 text-white font-bold">
+            JK
+          </div>
+          <button
+            id="dropdownAvatarNameButton"
+            data-dropdown-toggle="dropdownAvatarName"
+            className="flex items-center text-sm font-medium text-gray-900 rounded-full dark:hover:text-blue-500 md:mr-0 dark:focus:ring-gray-700 dark:text-white"
+            type="button"
+          >
+            <span className="sr-only">Open user menu</span>
+            <span>{user.name ? user.name : user.email}</span>
+            <svg
+              className="w-4 h-4 mx-1.5"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

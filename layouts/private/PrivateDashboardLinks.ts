@@ -1,17 +1,48 @@
-import { MdDashboard, MdViewList } from "react-icons/md";
-import { SideBarLinks } from "./types";
+import { RiDashboardLine, RiMistFill } from "react-icons/ri";
+import {
+  VscCommentDiscussion,
+  VscReport,
+  VscHeart,
+  VscAccount,
+} from "react-icons/vsc";
+import type { SideBarLinks } from "./types";
 
 /// route list
 const sideBarLinks: SideBarLinks[] = [
   {
     label: "Dashboard",
     to: "/beta/dashboard",
-    icons: MdDashboard,
+    icons: RiDashboardLine,
   },
   {
-    label: "Create",
-    to: "/beta/dashboard/posts/create",
-    icons: MdViewList,
+    label: "Pitch",
+    to: "/dashboard",
+    icons: RiMistFill,
+  },
+  {
+    label: "Finance",
+    to: "/dashboard",
+    icons: VscHeart,
+  },
+  {
+    label: "Comments",
+    to: "/dashboard",
+    icons: VscCommentDiscussion,
+  },
+  {
+    label: "Account",
+    to: "/dashboard/select",
+    icons: VscAccount,
+  },
+  {
+    label: "Profile setup",
+    to: "/dashboard/account",
+    icons: VscAccount,
+  },
+  {
+    label: "Report",
+    to: "/dashboard",
+    icons: VscReport,
   },
 ];
 

@@ -1,60 +1,86 @@
-import BaseDashboardLayout from "../../../layouts/private/PrivateDashboardLayout";
+import BaseDashboardLayout from "@/layouts/private/PrivateDashboardLayout";
 
-import BaseButton from "../../../components/forms/BaseButton";
+import Pitch from "@/public/images/icons8-pitch-64.png";
+import Comment from "@/public/images/icons8-comment-64.png";
+import Connect from "@/public/images/icons8-connect-64.png";
+import Report from "@/public/images/icons8-graph-report-100.png";
 
-const DetailCard = () => {
-  return (
-    <div className="border p-4 rounded cursor-pointer hover:bg-blue-primary transition-all hover:text-white">
-      <h3>IOS App UI/UX Design</h3>
-      <p>$4000</p>
-      <p>4 hours ago</p>
-    </div>
-  );
-};
+import StatsCard from "@/components/StatsCard";
+import GreetingCard from "@/components/Greeting";
+import PostCard from "@/components/PostCard";
 
 function Dashboard() {
-  return (
-    <div className="flex justify-between mx-5">
-      <div className="flex-1">
-        <div className="mt-10">
-          <h1 className="text-2xl font-bold">Welcome back, Kelvin Mansi</h1>
-          <p> You have 6 Notifications and 2 new Messages </p>
-        </div>
+  const postList = [
+    {
+      title: "Noteworthy",
+      body: "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+      views: "20 views",
+      active: true,
+      options: true,
+    },
+    {
+      title: "Digital marketing for students",
+      body: "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+      views: "20 views",
+      active: false,
+      options: true,
+    },
+  ];
 
-        <div className="flex gap-10 mt-20">
-          <div className="flex-1">
-            <h1 className="text-2xl font-bold">Active post</h1>
-            <div className="flex flex-col gap-5 mt-4">
-              {[1, 2, 3, 4].map((item) => (
-                <DetailCard key={item} />
-              ))}
-            </div>
-            <div className="mt-3">
-              <BaseButton>View more</BaseButton>
-            </div>
-          </div>
-          <div className="flex-1">
-            <h1 className="text-2xl font-bold">Recent Payments</h1>
-            <div className="flex flex-col gap-5 mt-4">
-              {[1, 2, 3, 4].map((item) => (
-                <DetailCard key={item} />
-              ))}
-            </div>
-            <div className="mt-3">
-              <BaseButton>View more</BaseButton>
-            </div>
-          </div>
-          <div className="flex-1">
-            <h1 className="text-2xl font-bold">Comments</h1>
-            <div className="flex flex-col gap-5 mt-4">
-              {[1, 2, 3, 4].map((item) => (
-                <DetailCard key={item} />
-              ))}
-            </div>
-            <div className="mt-3">
-              <BaseButton>View more</BaseButton>
-            </div>
-          </div>
+  const stats = [
+    {
+      heading: "50",
+      label: "Live Pitch",
+      icon: "",
+      color: "bg-[#8ecae6]",
+      img: Pitch,
+    },
+    {
+      heading: "13.3k",
+      label: "Comments",
+      icon: "",
+      color: "bg-[#fb8500]",
+      img: Comment,
+    },
+    {
+      heading: "10",
+      label: "Connects",
+      icon: "",
+      color: "bg-[#219ebc]",
+      img: Connect,
+    },
+    {
+      heading: "0",
+      label: "Reports",
+      icon: "",
+      color: "",
+      img: Report,
+    },
+  ];
+
+  return (
+    <div className="mt-20">
+      <GreetingCard />
+
+      <div id="overview-content" className="mt-10">
+        <h1 className="text-lg text-gray-400">Overview</h1>
+        <div className="flex items-center gap-5 mt-5">
+          {stats.map((items, index) => {
+            return (
+              <div key={index} className="w-full">
+                <StatsCard {...items} />
+              </div>
+            );
+          })}
+        </div>
+        <div className="w-full mt-5">
+          {postList.map((items, index) => {
+            return (
+              <div className="mt-5" key={index}>
+                <PostCard {...items} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
